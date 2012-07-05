@@ -1,7 +1,7 @@
 BlogShare
 ==========
 baserCMS Plugin
-Copyright 2008 - 2012, ryuring
+Copyright 2011 - 2012, Catchup, Inc. <http://www.e-catchup.jp>
 
 License
 -------
