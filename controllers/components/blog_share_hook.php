@@ -21,7 +21,7 @@ class BlogShareHookComponent extends Object {
 	
 	var $registerHooks = array('startup');
 	
-	function startup(&$controller) {
+	function startup($controller) {
 		
 		if($controller->name != 'Blog') {
 			return;

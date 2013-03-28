@@ -30,7 +30,7 @@ class BlogShareHookBehavior extends ModelBehavior {
 			'BlogTag'		=> array('beforeFind')
 	);
 	
-	function beforeFind(&$model, $query) {
+	function beforeFind($model, $query) {
 		
 		if($model->alias != 'BlogPost') {
 			return $query;
