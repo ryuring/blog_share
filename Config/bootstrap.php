@@ -17,4 +17,4 @@
  * @lastmodified	$Date$
  * @license			MIT lincense
  */
-loadPluginConfig('BlogShare.blog_share');
+Configure::load('BlogShare.blog_share');

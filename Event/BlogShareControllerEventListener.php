@@ -1,7 +1,7 @@
 <?php
 /* SVN FILE: $Id$ */
 /**
- * [BlogShare] フックコンポーネント
+ * コントローラーイベントリスナ
  *
  * PHP version 5
  *
@@ -17,22 +17,22 @@
  * @lastmodified	$Date$
  * @license			MIT lincense
  */
-class BlogShareHookComponent extends Object {
+class BlogShareControllerEventListener extends BcControllerEventListener {
 	
-	var $registerHooks = array('startup');
+	public $events = array(
+		'Blog.Blog.startup'
+	);
 	
-	function startup($controller) {
-		
-		if($controller->name != 'Blog') {
-			return;
-		}
-		if(!isset($controller->contentId) || $controller->contentId != Configure::read('BlogShare.contentId')) {
+	function blogBlogStartup(CakeEvent $event) {
+
+		$Controller = $event->subject();
+		if(!isset($Controller->contentId) || $Controller->contentId != Configure::read('BlogShare.contentId')) {
 			return;
 		}
 		$dbConfigName = Configure::read('BlogShare.dbConfigName');
-		$controller->BlogPost->useDbConfig = $dbConfigName;
-		$controller->BlogPost->BlogCategory->useDbConfig = $dbConfigName;
-		$controller->BlogPost->BlogTag->useDbConfig = $dbConfigName;
+		$Controller->BlogPost->setDataSource($dbConfigName);
+		$Controller->BlogPost->BlogCategory->setDataSource($dbConfigName);
+		$Controller->BlogPost->BlogTag->setDataSource($dbConfigName);
 		
 	}
 	
