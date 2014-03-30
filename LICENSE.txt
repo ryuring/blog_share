@@ -1,0 +1,5 @@
+Approver : baserCMS Plugin
+Copyright 2014, Catchup, Inc. <http://www.e-catchup.jp/>
+
+About License
+http://basercms.net/license/index.html
