@@ -21,4 +21,3 @@ $title = 'ブログ共有';
 $description = '別のデータベースのブログデータを読み込みます。';
 $author = 'ryuring';
 $url = 'http://www.e-catchup.jp';
-?>
